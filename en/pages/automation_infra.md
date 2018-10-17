@@ -1,7 +1,6 @@
-# Automation InfrastrucSpace
+# Automation Infrastructure Space
 
-
-Automation Infrastructure Setup
+This section focus on automation infrastructure setup
 
 ## VMWare setup
 tips
@@ -11,16 +10,24 @@ Automation Infrastructure Setup
 
 ## Client Setup 
 ### Windows Testbed setup:
-	Refer to https://wiki.absolute.com/pages/viewpage.action?pageId=13369722 for VM setup. 
-	Disable windows firewall and defender (https://www.windowscentral.com/how-permanently-disable-windows-defender-windows-10)
-	Disable windows update (http://www.thewindowsclub.com/turn-off-windows-update-in-windows-10)
-	Disable windows activation pop up if necessary http://www.thewindowsclub.com/disable-auto-activation-feature-windows-7-8
-	Install Python 2.7.x 32 bit and check option to add python path to environment variables*
-	Install Git client on the VM and copy Git folder under root directory "c:\" to match our Jenkins setup 
-	Install Java JDK 1.8 (Eg. 8u151) to the VM
-	Setup Jenkins slave via https://wiki.absolute.com/display/TA/Setting+up+New+VM+on+Jenkins
-	If remote ssh is needed, install OpenSSH if it's client and a test agent is associated with it.
-	After cloning the python script from Git, run the script to install pytest "python setup.py -c dfz -pytest"
+  * [Disable windows firewall and defender](https://www.windowscentral.com/how-permanently-disable-windows-defender-windows-10)
+  * [Disable windows update](http://www.thewindowsclub.com/turn-off-windows-update-in-windows-10)
+  * [Disable windows activation pop up if necessary](http://www.thewindowsclub.com/disable-auto-activation-feature-windows-7-8)
+  * Disabling sleep:
+    * select *Power & Sleep settings*
+    * For the drop down menu under *When plugged in, turn off after*, select never
+	* For the drop down menu under *When plugged in, PC goes to sleep after*, select never
+  * Disable Windows User Account Controls:
+    * select *User Account Control* in the start bar
+	* drag the notification scroll down to "Never notify" on the bottom
+  * Disable Windows SmartScreen Feature (Windows 8 and above only)
+    * Search *SmartScreen* in the start bar and click *Change SmartScreen settings*
+	* Click the arrow beside *Security*, then click *Change settings* under *Windows SmartScreen*
+  * Install Python 2.7.x 32 bit and check option to add python path to environment variables*
+  *	Donwload and Install Git client on the client, and then copy Git folder to match our Jenkins setup(E.g. under root directory "c:\") 
+  *	Install Java JDK 1.8 (Eg. 8u151)
+  *	[Setup Jenkins slave](https://wiki.absolute.com/display/TA/Setting+up+New+VM+on+Jenkins)
+  *	If remote ssh is needed, install OpenSSH if it's client and a test agent is associated with it.
 
 ### Mac Testbed setup:
 	Configure static IP address to any physical Mac box. See IP allocation above 

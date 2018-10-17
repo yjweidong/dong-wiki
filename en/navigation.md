@@ -3,7 +3,7 @@
   -- Do NOT remove the leading `#` character.
   -->
 
-# Dong's Wiki
+# Wiki
 
 
 <!--
@@ -19,33 +19,27 @@
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
 
-## Automation Space
-
-[Automation Infrastructure](pages/automation_infra.md) 
-[Automation design](pages/automation_design.md) 
- 
 [About](pages/about.md)
 [Download](pages/download.md)
 
-<!-- A more complex navigation example: ----------------------------------------
+**Automation**
 
-[Menu Item 1]()
-
-  * # Automation
-  * [SubMenu Item 1](pages/subitem1.md)
-  * [SubMenu Item 2](pages/subitem2.md)
-  - - - -
-  * # New Technologies
-  * [SubMenu Item 3](pages/subitem3.md)
+  <!--* # Automation-->
+  * [Automation Infrastructure](pages/automation_infra.md)
+  * [Automation design](pages/automation_design.md)
   - - - -
   * # SubMenu Heading 3
   * [SubMenu Item 3](pages/subitem3.md)
 
-[Menu Item 2](pages/item2.md)
+[**Technologies**](pages/item2.md)
+
+  * [Microservice](pages/subitem3.md)
+  - - - -
+  * # SubMenu Heading 3
+  * [SubMenu Item 3](pages/subitem3.md)
 
 [Menu Item 3](pages/item3.md)
 
----------------------------------------------------------------------------- -->
 
 <!--
   -- Change the Language
