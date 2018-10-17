@@ -6,7 +6,7 @@
 Automation Infrastructure Setup
 
 ### VMWare setup
-tips
+ [VMWare setup](vmware-setup.md)
 
 ### Jenkins setup
 Automation Infrastructure Setup
