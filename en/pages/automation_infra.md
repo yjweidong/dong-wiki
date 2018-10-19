@@ -37,15 +37,10 @@ Automation Infrastructure Setup
 
 ### Mac Testbed setup:	
   *	Disable Automatically check for updates via System Preference → App Store
-  *	Disable sudo password popup
-	Open terminal, then sudo visudo, change this line:
-
-	$ %admin ALL=(ALL) ALL
-
-	TO:
-
-	$ %admin ALL=(ALL) NOPASSWD: ALL
-
+  *	Disable sudo password popup. Open terminal, then sudo visudo, change this line:  
+	*$ %admin ALL=(ALL) ALL*  
+	TO:  
+	*$ %admin ALL=(ALL) NOPASSWD: ALL*  
   *	Install Java 8 or above
   *	Install Git and match our Jenkins setup
   *	Install Python (Make sure the PATH is the correct one, i.e. the default one that Jenkin uses)
@@ -63,4 +58,17 @@ Automation Infrastructure Setup
 	* Set sshd and ssh-agent services as automatic start and Log On as Local System account, then start
 	* Start a SSH client (such as Mobaxterm) to make a SSH connection
 
+## Client Setup on Virtual Machine
 
+### Virtualbox Setup
+  * [Install MacOS Mojave on virtualbox on Windows PC](https://techsviewer.com/install-macos-10-14-mojave-virtualbox-windows/)
+    * [Sync mouse and keyboard in MacOS VM](https://techsviewer.com/install-macos-10-14-mojave-virtualbox-windows/)
+	* To access MacOS VM via SSH inside the virtualbox from external, config port forwarding via virtualbox Settings -> network,  make sure *Attached to* is *NAT*, and 
+      expand *Advanced* then add port forwarding rules.  
+	  * E.g: *Protocl*/*TCP*, *Host IP*/*127.0.0.1*, *Host Port*/*2224*, *Guest IP*/*<10.0.2.15>*, *Guest Port*/*22*
+  * 
+
+### VMWare Workstation Setup
+  * Install Windows on Windows PC:
+    * Minimum cpu/memory requirement. Windows 7-32: 1 vcpu/1G, Windows 7/8/10-64: 2 vcpu/2G, 
+	* Network Adapter. *Custom VMnet8 (NAT)*
