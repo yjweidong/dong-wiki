@@ -72,3 +72,7 @@ Automation Infrastructure Setup
   * Install Windows on Windows PC:
     * Minimum cpu/memory requirement. Windows 7-32: 1 vcpu/1G, Windows 7/8/10-64: 2 vcpu/2G, 
 	* Network Adapter. *Custom VMnet8 (NAT)*
+  * Install MacOS on Windows PC: (Required VMWare workstation 10.12 and above)
+    * [Install MacOS 10.13 on VMWare Workstation](https://techsviewer.com/install-macos-high-sierra-vmware-windows-pc/)
+	* [Install MacOS 10.14 on VMWare Workstation](https://techsviewer.com/install-macos-mojave-vmware-windows/)
+	
