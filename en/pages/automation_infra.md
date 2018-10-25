@@ -6,7 +6,15 @@ This section focus on automation infrastructure setup
 tips
 
 ## Jenkins setup
-Automation Infrastructure Setup
+### Install Jenkins agent on Windows
+  * In the client access Jenkin server via browser and login. 
+  * Click *Manage Jenkins* -> *Manage Nodes*, then select *New Node* to create a node with *Launch method* as *Launch agent via Java Web Start*
+  * On the next page, click the orange *Launch* button, the *Jenkins slave agent* window will pop-up
+  * Click *File* -> *Install as a service*, Confirm the slave agent installation 
+    * If you see the "WMI.Wmiexception: accessdenied" error, close the slave agent that is open and open up command prompt as administrator then run the slave-agent.jnlp again
+    * Once installation is complete, open up your file explorer and go into the "C:\Jenkins" path or click Computer -> Local Disk (C:) -> Jenkins.
+	* Open up the "jenkins-slave.xml" file. In the file, search for the <arguments> element in the <service> tag. Check if the arguments element has "-noCertificateCheck", if it doesn't, include the string
+	* restart the Jenkin service
 
 ## Client Setup 
 ### Windows Testbed setup:
@@ -34,6 +42,7 @@ Automation Infrastructure Setup
 		Add *DefaultPassword* string entry, type your password, and then click OK
 		If you have joined the computer to a domain, add the *DefaultDomain* string value
 		Edit *AutoAdminLogon* entry, type 1 and then click OK
+  * [Enable user-mode dump (Optional)](https://docs.microsoft.com/en-us/windows/desktop/wer/collecting-user-mode-dumps)
 
 ### Mac Testbed setup:	
   *	Disable Automatically check for updates via System Preference → App Store
