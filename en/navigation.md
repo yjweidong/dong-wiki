@@ -34,6 +34,8 @@
 [**Technologies**](pages/item2.md)
 
   * [Microservice](pages/subitem3.md)
+  * [Windows OS & Tips](pages/windows_os_tips.md)
+  * [Mac OS & Tips](pages/mac_os_tips.md)
   - - - -
   * # SubMenu Heading 3
   * [SubMenu Item 3](pages/subitem3.md)
