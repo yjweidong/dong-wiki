@@ -1,4 +1,4 @@
-# Automation Space
+﻿# Automation Space
 
 
 ## Infrastructure
@@ -10,6 +10,9 @@ tips
 
 ### Jenkins setup
 Automation Infrastructure Setup
+
+### Performance testing:
+	https://medium.com/the-telegraph-engineering/performance-testing-using-gatling-tool-b3adeeaefb77
 
 ### Windows Testbed setup:
 	Refer to https://wiki.absolute.com/pages/viewpage.action?pageId=13369722 for VM setup. 
@@ -54,3 +57,7 @@ Automation Infrastructure Setup
 ## Section 2
 
 Automation tips
+
+### Pycharm and Python:
+	1) resolve "unresolved reference issue in Pycharm": Add parent folder (source roots) to Pycharm PYTHONPATH (right click the folder then Mark Directory As "Source Root")
+		https://stackoverflow.com/questions/21236824/unresolved-reference-issue-in-pycharm

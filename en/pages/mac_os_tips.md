@@ -10,6 +10,11 @@
 	Disable Automatically check for updates via System Preference → App Store
 	Create an administration account with user ID as "qa" and well known password.
 	Disable sudo password popup
+	for Mac 10.14 SSH session may be constantly disconnected after minutes. Need to make SSH server keep connection alive via https://stackoverflow.com/questions/8660532/avoiding-ssh-timeouts-on-mac-os
+	  In general, create the following settings in the config file .ssh/config:
+		Host *
+		 ServerAliveInterval 60
+
 
 ### Install OpenSSH on Windows Client (Optional):
 	Some test cases, such as Device freeze, need to be executed remotely since the device will become frozen after applying DFZ request or be forced to reboot after unfreeze.
@@ -39,4 +44,8 @@
   
 ### Tools:
   * [online tool to decode/encode with hash] (https://emn178.github.io/online-tools/)
+  
+### Performance monitoring tools-installed
+  * top 
+    * Eg. track process with sorting key as cpu in logging mode: top -ocpu -s 1 -pid <pid> -stats "pid,command,cpu,mem" -l 0
 
