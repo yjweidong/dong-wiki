@@ -13,6 +13,7 @@ Automation Infrastructure Setup
 
 ### Performance testing:
 	https://medium.com/the-telegraph-engineering/performance-testing-using-gatling-tool-b3adeeaefb77
+	
 
 ### Windows Testbed setup:
 	Refer to https://wiki.absolute.com/pages/viewpage.action?pageId=13369722 for VM setup. 
@@ -25,28 +26,6 @@ Automation Infrastructure Setup
 	Setup Jenkins slave via https://wiki.absolute.com/display/TA/Setting+up+New+VM+on+Jenkins
 	If remote ssh is needed, install OpenSSH if it's client and a test agent is associated with it.
 	After cloning the python script from Git, run the script to install pytest "python setup.py -c dfz -pytest"
-
-### Mac Testbed setup:
-	Configure static IP address to any physical Mac box. See IP allocation above 
-	Disable Automatically check for updates via System Preference → App Store
-	Create an administration account with user ID as "qa" and well known password.
-	Disable sudo password popup
-
-	Open terminal, then sudo visudo, change this line:
-
-	$ %admin ALL=(ALL) ALL
-
-	TO:
-
-	$ %admin ALL=(ALL) NOPASSWD: ALL
-
-	Install Java 8 or above
-	Install Git
-	Install Python (Make sure the PATH is the correct one, i.e. the default one that Jenkin uses)
-	Install Pip
-	Install Pytest (and related item such as pytest-html)
-	Enable remote management and login
-	Enable automatic login for the user
 
 ### Install OpenSSH on Windows Client (Optional):
 	Some test cases, such as Device freeze, need to be executed remotely since the device will become frozen after applying DFZ request or be forced to reboot after unfreeze.

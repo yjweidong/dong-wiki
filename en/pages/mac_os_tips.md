@@ -10,11 +10,29 @@
 	Disable Automatically check for updates via System Preference → App Store
 	Create an administration account with user ID as "qa" and well known password.
 	Disable sudo password popup
+	Open terminal, then sudo visudo, change this line:
+
+	$ %admin ALL=(ALL) ALL
+
+	TO:
+
+	$ %admin ALL=(ALL) NOPASSWD: ALL
+
+	Install Java 8 or above
+	Install Git
+	Install Python (Make sure the PATH is the correct one, i.e. the default one that Jenkin uses)
+	Install Pip
+	Install Pytest (and related item such as pytest-html)
+	Enable remote management and login
+	Enable automatic login for the user
+
 	for Mac 10.14 SSH session may be constantly disconnected after minutes. Need to make SSH server keep connection alive via https://stackoverflow.com/questions/8660532/avoiding-ssh-timeouts-on-mac-os
 	  In general, create the following settings in the config file .ssh/config:
 		Host *
 		 ServerAliveInterval 60
-
+	For benchmark test, need to install:
+		Install telegraf via "brew install telegraf". See https://docs.influxdata.com/telegraf/v1.10/introduction/installation/
+		Install matplotlib via "pip install matplotlib" 
 
 ### Install OpenSSH on Windows Client (Optional):
 	Some test cases, such as Device freeze, need to be executed remotely since the device will become frozen after applying DFZ request or be forced to reboot after unfreeze.
