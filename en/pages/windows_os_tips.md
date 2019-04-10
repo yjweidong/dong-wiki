@@ -61,3 +61,23 @@ Automation tips
 ### Pycharm and Python:
 	1) resolve "unresolved reference issue in Pycharm": Add parent folder (source roots) to Pycharm PYTHONPATH (right click the folder then Mark Directory As "Source Root")
 		https://stackoverflow.com/questions/21236824/unresolved-reference-issue-in-pycharm
+
+## Section 3
+
+Telegraf
+
+### telegraf install in Windows
+	1) install as a service via command prompt "telegraf.exe -service install -config <absolute_path_to_config>"
+	2) config file:
+		a) for multiple instances with same process name, such as WmiPrvSE, enable wildcards as below:
+		     [[inputs.win_perf_counters]]
+				UseWildcardsExpansion=true
+			[[inputs.win_perf_counters.object]]
+				ObjectName = "Process"
+				Counters = [...]
+				Instances = ["WmiPrvSE*"]
+		b) for file output locally
+			[[outputs.file]]
+			## Files to write to, "stdout" is a specially handled file.
+				files = ["stdout", "/tmp/metrics.out"]
+	3) 

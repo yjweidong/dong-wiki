@@ -47,5 +47,25 @@
   
 ### Performance monitoring tools-installed
   * top 
-    * Eg. track process with sorting key as cpu in logging mode: top -ocpu -s 1 -pid <pid> -stats "pid,command,cpu,mem" -l 0
+    * Eg. track process <pid> with sorting key as cpu in logging mode: top -ocpu -s 1 -pid <pid> -stats "pid,command,cpu,mem" -l 0
+		bash-3.2# top -ocpu -n50 -s 1 -pid 1635 -l 0 -stats pid,command,cpu,mem
+		Processes: 287 total, 2 running, 285 sleeping, 881 threads
+		2019/03/12 11:24:35
+		Load Avg: 1.37, 1.25, 1.16
+		CPU usage: 3.7% user, 9.23% sys, 87.69% idle
+		SharedLibs: 344M resident, 63M data, 50M linkedit.
+		MemRegions: 24238 total, 1734M resident, 156M private, 533M shared.
+		PhysMem: 4858M used (1695M wired), 11G unused.
+		VM: 1367G vsize, 1297M framework vsize, 0(0) swapins, 0(0) swapouts.
+		Networks: packets: 649298/141M in, 164806/114M out.
+		Disks: 91033/1808M read, 148571/2320M written.
 
+		PID   COMMAND %CPU MEM
+		1635  hdc     0.0  5820K+
+
+	* Eg. track process <pid> with filter for stats line only in logging mode:  
+	    bash-3.2# top -s 1 -pid 1635 -l 0 -stats pid,command,cpu,mem  | awk 'NR%13==0'
+		1635  hdc     0.0  5820K+
+		1635  hdc     0.0  5820K
+
+	* Get process CPU usage at https://stackoverflow.com/questions/16726779/how-do-i-get-the-total-cpu-usage-of-an-application-from-proc-pid-stat
