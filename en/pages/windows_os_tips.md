@@ -13,7 +13,10 @@ Automation Infrastructure Setup
 
 ### Performance testing:
 	https://medium.com/the-telegraph-engineering/performance-testing-using-gatling-tool-b3adeeaefb77
-	
+
+### Registry:
+	On windows 64bit OS, registry key will be created under "HKLM\Software" for 64bit application, and under "HKLM\Software\WOW6432Node" for 32bit application
+	See different logical view at https://docs.microsoft.com/en-us/windows/desktop/WinProg64/registry-redirector
 
 ### Windows Testbed setup:
 	Refer to https://wiki.absolute.com/pages/viewpage.action?pageId=13369722 for VM setup. 
