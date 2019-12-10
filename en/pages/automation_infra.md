@@ -52,9 +52,9 @@ tips
 	*$ %admin ALL=(ALL) NOPASSWD: ALL*  
   *	Install Java 8 or above
   *	Install Git and match our Jenkins setup
-  *	Install Python (Make sure the PATH is the correct one, i.e. the default one that Jenkin uses)
-  *	Install Pip
-  *	Install Pytest (and related item such as pytest-html)
+  *	Install Python (Make sure the PATH is the correct one, i.e. the default one that Jenkin uses "/usr/local/bin/python")
+  * Install Pip https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows
+  * Install Pytest and plug-in via "pip install pytest" and "pip install pytest-html". 
   *	Enable remote management and login
   *	If necessary, enable automatic login for the user
 

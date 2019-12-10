@@ -44,6 +44,10 @@ Automation tips
 	1) resolve "unresolved reference issue in Pycharm": Add parent folder (source roots) to Pycharm PYTHONPATH (right click the folder then Mark Directory As "Source Root")
 		https://stackoverflow.com/questions/21236824/unresolved-reference-issue-in-pycharm
 
+### Turn on windows browser service:
+	See https://www.surfacetablethelp.com/2018/02/computer-browser-service-missing-and-not-working-after-windows-10-fall-creators-update.html
+	To enable it, type Control Panel in Start menu, naviage to the Programs & Features > Turn Windows features on or off, Locate the “SMB 1.0/CIFS File Sharing Support”, check the checkbox associated with it and press OK button. Then restart the system to take effect
+		
 ## Section 3
 
 Telegraf
@@ -63,3 +67,23 @@ Telegraf
 			## Files to write to, "stdout" is a specially handled file.
 				files = ["stdout", "/tmp/metrics.out"]
 	3) 
+
+# Client Performance Test
+	1) [agent]:
+		interval="1s"
+		flush_interval="1s"
+		fluse_jitter="0s"
+	   [inputs.win_perf_counters]:
+		Process: ["% Processor Time","% User Time","ID Process","Private Bytes","Thread Count","Virtual Bytes","Working Set"]
+			see link https://stackoverflow.com/questions/1984186/what-is-private-bytes-virtual-bytes-working-set
+		Processor: ["% Idle Time", "% Interrupt Time", "% Privileged Time", "% User Time", "% Processor Time", "% DPC Time", ]
+		LogicalDisk: ["% Idle Time", "% Disk Time", "% Disk Read Time", "% Disk Write Time", "Current Disk Queue Length", "% Free Space", "Free Megabytes"]
+		PhysicalDisk: ["Disk Read Bytes/sec", "Disk Write Bytes/sec", "Current Disk Queue Length", "Disk Reads/sec", "Disk Writes/sec", "% Disk Time", "% Disk Read Time", "% Disk Write Time"]
+		Network Interface: ["Bytes Received/sec", "Bytes Sent/sec", "Packets Received/sec", "Packets Sent/sec", "Packets Received Discarded", "Packets Outbound Discarded", "Packets Received Errors", "Packets Outbound Errors"]
+		System: ["Context Switches/sec", "System Calls/sec", "Processor Queue Length", "System Up Time"]
+		Memory: ["Available Bytes", "Cache Faults/sec", "Demand Zero Faults/sec", "Page Faults/sec", "Pages/sec", "Transition Faults/sec", "Pool Nonpaged Bytes",
+			 "Pool Paged Bytes", "Standby Cache Reserve Bytes", "Standby Cache Normal Priority Bytes", "Standby Cache Core Bytes"]
+	   [inputs.procstat]:
+		 	
+
+	2)

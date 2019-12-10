@@ -6,26 +6,19 @@
 
 
 ### Mac Testbed setup:
-	Configure static IP address to any physical Mac box. See IP allocation above 
 	Disable Automatically check for updates via System Preference → App Store
 	Create an administration account with user ID as "qa" and well known password.
 	Disable sudo password popup
-	Open terminal, then sudo visudo, change this line:
-
-	$ %admin ALL=(ALL) ALL
-
-	TO:
-
-	$ %admin ALL=(ALL) NOPASSWD: ALL
-
-	Install Java 8 or above
-	Install Git
-	Install Python (Make sure the PATH is the correct one, i.e. the default one that Jenkin uses)
+	Install Homebrew (refer to http://osxdaily.com/2018/03/07/how-install-homebrew-mac-os/)
+	Install Java 8 or openjdk (https://java.tutorials24x7.com/blog/how-to-install-openjdk-12-on-macos)
+	Install Git (http://modulesunraveled.com/installing-git/installing-git-if-you-do-not-have-xcode-or-command-line-developer-tools-installed)
+	Install Python (Make sure the PATH is updated to proper version 3.x, i.e. the default one that Jenkin build uses is /usr/local/bin/python)
 	Install Pip
 	Install Pytest (and related item such as pytest-html)
 	Enable remote management and login
 	Enable automatic login for the user
-
+	Configure static IP address to any physical Mac box if necessary. See IP allocation above 
+	
 	for Mac 10.14 SSH session may be constantly disconnected after minutes. Need to make SSH server keep connection alive via https://stackoverflow.com/questions/8660532/avoiding-ssh-timeouts-on-mac-os
 	  In general, create the following settings in the config file .ssh/config:
 		Host *
@@ -40,9 +33,15 @@
 	Set and start sshd and ssh-agent services: Start type as automatic start and Log On as Local System account
 	Start a SSH client (such as Mobaxterm) to run the test
 
-### Install Git on Mac
-	http://modulesunraveled.com/installing-git/installing-git-if-you-do-not-have-xcode-or-command-line-developer-tools-installed
-	
+###	Disable sudo password popup
+	Open terminal, then sudo visudo, change this line:
+
+	$ %admin ALL=(ALL) ALL
+
+	TO:
+
+	$ %admin ALL=(ALL) NOPASSWD: ALL
+
 ### Install HTTP server:
 	[Notes](https://discussions.apple.com/docs/DOC-3083)
 	Default document location is /Library/WebServer/Documents/ defined in /etc/apache2/httpd.conf
@@ -58,7 +57,8 @@
 
   * [Prevent 'grep' from showing up in ps results](https://unix.stackexchange.com/questions/74185/how-can-i-prevent-grep-from-showing-up-in-ps-results)
     * pgrep for display PID of a process, or execute ps -ax | grep "[h]dc"
-  *
+  * [show package contents for a "pkg" file] (https://apple.stackexchange.com/questions/15658/how-can-i-open-a-pkg-file-manually)
+	* open terminal: pkgutil --expand my.pkg path/to/expand, then read it via lsbom command to show the BOM file which contains a manifest of everything the package will install and where to;
   
 ### Tools:
   * [online tool to decode/encode with hash] (https://emn178.github.io/online-tools/)
