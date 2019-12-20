@@ -17,6 +17,7 @@ Automation Infrastructure Setup
 ### Registry:
 	On windows 64bit OS, registry key will be created under "HKLM\Software" for 64bit application, and under "HKLM\Software\WOW6432Node" for 32bit application
 	See different logical view at https://docs.microsoft.com/en-us/windows/desktop/WinProg64/registry-redirector
+	In Windows 64bit, for 32bit application, registry will be created under HKLM\Software\WOW6432Node, execute "regedit.msc" from desktop (file location is %windir%\regedit.msc), it won't re-direct to 32bit application
 
 ### Windows Testbed setup:
 	Refer to https://wiki.absolute.com/pages/viewpage.action?pageId=13369722 for VM setup. 
