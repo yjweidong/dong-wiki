@@ -15,7 +15,11 @@ tips
     * Once installation is complete, open up your file explorer and go into the "C:\Jenkins" path or click Computer -> Local Disk (C:) -> Jenkins.
 	* Open up the "jenkins-slave.xml" file. In the file, search for the <arguments> element in the <service> tag. Check if the arguments element has "-noCertificateCheck", if it doesn't, include the string
 	* restart the Jenkin service
-
+### Jenkins plugins to be enabled
+	* CORS support (otherwise cross-site access will be denied)
+	* pipeline
+	* SSH Agent plugin
+	
 ## Client Setup 
 ### Windows Testbed setup:
   * [Disable windows firewall and defender](https://www.windowscentral.com/how-permanently-disable-windows-defender-windows-10)
